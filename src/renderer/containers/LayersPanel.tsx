@@ -77,7 +77,7 @@ class LayersPanel extends React.Component<ILayersPanelProps & DispatchProp<State
 
     componentDidMount(): void {
         if (!this.props.colorMapCategories) {
-            this.props.dispatch(actions.loadColorMaps());
+            this.props.dispatch(actions.loadColorMaps() as any);
         }
     }
 
@@ -106,7 +106,7 @@ class LayersPanel extends React.Component<ILayersPanelProps & DispatchProp<State
     }
 
     private handleChangedLayerVisibility(layer: LayerState, visible: boolean) {
-        this.props.dispatch(actions.updateLayer(this.props.activeView.id, layer, {visible}));
+        this.props.dispatch(actions.updateLayer(this.props.activeView.id, layer, {visible}) as any);
     }
 
     private handleChangedLayerSplitMode(event) {
@@ -181,19 +181,19 @@ class LayersPanel extends React.Component<ILayersPanelProps & DispatchProp<State
                 <ToolButton tooltipContent="Add a new layer" tooltipPosition={Position.LEFT}
                             className="pt-intent-primary"
                             onClick={this.handleAddLayerButtonClicked}
-                            iconName="add"/>
+                            icon="add"/>
                 <ToolButton tooltipContent="Remove selected layer" tooltipPosition={Position.LEFT}
                             disabled={!canRemoveLayer}
                             onClick={this.handleRemoveLayerButtonClicked}
-                            iconName="remove"/>
+                            icon="remove"/>
                 <ToolButton tooltipContent="Move layer up" tooltipPosition={Position.LEFT}
                             disabled={!canMoveLayerUp}
                             onClick={this.handleMoveLayerUpButtonClicked}
-                            iconName="arrow-up"/>
+                            icon="arrow-up"/>
                 <ToolButton tooltipContent="Move layer down" tooltipPosition={Position.LEFT}
                             disabled={!canMoveLayerDown}
                             onClick={this.handleMoveLayerDownButtonClicked}
-                            iconName="arrow-down"/>
+                            icon="arrow-down"/>
                 <LayerSourcesDialog/>
             </div>
         );
@@ -252,7 +252,7 @@ class LayersPanel extends React.Component<ILayersPanelProps & DispatchProp<State
         const handleChangedLayerVarIndex = (i: number, value: number) => {
             const varIndex = layer.varIndex.slice();
             varIndex[i] = value;
-            this.props.dispatch(actions.updateLayer(this.props.activeView.id, layer, {varIndex}));
+            this.props.dispatch(actions.updateLayer(this.props.activeView.id, layer, {varIndex}) as any);
         };
 
         const n = variable.numDims - 2;

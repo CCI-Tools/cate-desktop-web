@@ -43,7 +43,7 @@ class FigureView extends React.Component<IFigureViewProps & DispatchProp<State>,
 
     onDownload(figureId: number) {
         const imageBaseUrl = getMPLDownloadUrl(this.props.baseUrl, this.props.baseDir, figureId);
-        this.props.dispatch(actions.saveFigureImageAs(imageBaseUrl, figureId));
+        this.props.dispatch(actions.saveFigureImageAs(imageBaseUrl, figureId) as any);
     }
 
     render() {

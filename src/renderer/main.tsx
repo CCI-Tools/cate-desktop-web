@@ -36,24 +36,24 @@ export function main() {
     const store = createStore(stateReducer, middleware) as Store<State>;
 
     ipcRenderer.on('apply-initial-state', (event, initialState) => {
-        store.dispatch(actions.updateInitialState(initialState));
+        store.dispatch(actions.updateInitialState(initialState) as any);
         connectWebAPIClient(store);
     });
 
     ipcRenderer.on('new-workspace', () => {
-        store.dispatch(actions.newWorkspaceInteractive());
+        store.dispatch(actions.newWorkspaceInteractive() as any);
     });
 
     ipcRenderer.on('open-workspace', () => {
-        store.dispatch(actions.openWorkspaceInteractive());
+        store.dispatch(actions.openWorkspaceInteractive() as any);
     });
 
     ipcRenderer.on('close-workspace', () => {
-        store.dispatch(actions.closeWorkspaceInteractive());
+        store.dispatch(actions.closeWorkspaceInteractive() as any);
     });
 
     ipcRenderer.on('save-workspace', () => {
-        store.dispatch(actions.saveWorkspaceInteractive());
+        store.dispatch(actions.saveWorkspaceInteractive() as any);
     });
 
     ipcRenderer.on('save-workspace-as', () => {
@@ -65,7 +65,7 @@ export function main() {
     });
 
     ipcRenderer.on('get-preferences', () => {
-        store.dispatch(actions.sendPreferencesToMain());
+        store.dispatch(actions.sendPreferencesToMain() as any);
     });
 
     document.addEventListener('drop', function (event: any) {
@@ -91,10 +91,10 @@ function connectWebAPIClient(store: Store<State>) {
 
     webAPIClient.onOpen = () => {
         store.dispatch(actions.setWebAPIStatus(webAPIClient, 'open'));
-        store.dispatch(actions.loadBackendConfig());
-        store.dispatch(actions.loadDataStores());
-        store.dispatch(actions.loadOperations());
-        store.dispatch(actions.loadInitialWorkspace());
+        store.dispatch(actions.loadBackendConfig() as any);
+        store.dispatch(actions.loadDataStores() as any);
+        store.dispatch(actions.loadOperations() as any);
+        store.dispatch(actions.loadInitialWorkspace() as any);
 
         ReactDOM.render(
             <Provider store={store}>
@@ -119,29 +119,29 @@ function connectWebAPIClient(store: Store<State>) {
 
 function readDroppedFile(file: File, dispatch: Dispatch<State>) {
     let opName, opArgs;
-    if (file.path.endsWith('.nc')) {
+    if (file.name.endsWith('.nc')) {
         opName = 'read_netcdf';
         // opArgs = {file: {value: file.path}, normalize: {value: false}}
-    } else if (file.path.endsWith('.txt')) {
+    } else if (file.name.endsWith('.txt')) {
         opName = 'read_text';
-    } else if (file.path.endsWith('.json')) {
+    } else if (file.name.endsWith('.json')) {
         opName = 'read_json';
-    } else if (file.path.endsWith('.csv')) {
+    } else if (file.name.endsWith('.csv')) {
         opName = 'read_csv';
-    } else if (file.path.endsWith('.geojson') || file.path.endsWith('.shp') || file.path.endsWith('.gml')) {
+    } else if (file.name.endsWith('.geojson') || file.path.endsWith('.shp') || file.path.endsWith('.gml')) {
         opName = 'read_geo_data_frame';
     }
     if (!opArgs) {
-        opArgs = {file: {value: file.path}};
+        opArgs = {file: {value: file.name}};
     }
     if (opName) {
         dispatch(actions.setWorkspaceResource(opName,
                                               opArgs,
                                               null,
                                               false,
-                                              `Reading dropped file ${file.path}`));
+                                              `Reading dropped file ${file.name}`) as any);
     } else {
-        console.warn('Dropped file of unrecognized type: ', file.path);
+        console.warn('Dropped file of unrecognized type: ', file.name);
     }
 }
 

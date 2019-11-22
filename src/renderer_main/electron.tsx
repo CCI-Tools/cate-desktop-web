@@ -1,18 +1,23 @@
 
 class IpcRenderer {
 
-    send(channel: string, options: any, b: boolean) {
-        console.warn("IpcRenderer.send() not implemented");
+    sendSync(channel: string, ...args) {
+        console.warn("IpcRenderer.sendSync() not implemented: ", channel, args);
         // TODO: implement me.
     }
 
-    once(channel: string, listener: (event: any, param1?: any, param2?: any, param3?: any) => void) {
-        console.warn("IpcRenderer.once() not implemented");
+    send(channel: string, ...args) {
+        console.warn("IpcRenderer.send() not implemented: ", channel, args);
         // TODO: implement me.
     }
 
-    sendSync(channel: string, options: any, b: boolean) {
-        console.warn("IpcRenderer.sendSync() not implemented");
+    on(channel: string, listener: (event, ...args) => void) {
+        console.warn("IpcRenderer.on() not implemented: ", channel);
+        // TODO: implement me.
+    }
+
+    once(channel: string, listener: (event: any, ...args) => void) {
+        console.warn("IpcRenderer.once() not implemented: ", channel);
         // TODO: implement me.
     }
 }
@@ -21,19 +26,19 @@ class IpcRenderer {
 class Shell {
     openExternal(path: string): boolean {
         // TODO: implement me. may open new browser window using path
-        console.warn("Shell.openExternal() not implemented");
+        console.warn("Shell.openExternal() not implemented: ", path);
         return false;
     }
 
     showItemInFolder(path: string): boolean {
         // TODO: implement me. may show workspace file in new browser window
-        console.warn("Shell.showItemInFolder() not implemented");
+        console.warn("Shell.showItemInFolder() not implemented: ", path);
         return false;
     }
 
     openItem(path: string): boolean {
         // TODO: implement me. No idea here...
-        console.warn("Shell.openItem() not implemented");
+        console.warn("Shell.openItem() not implemented: ", path);
         return false;
     }
 }
@@ -42,7 +47,7 @@ class Shell {
 class Clipboard {
     writeText(text: string) {
         // TODO: implement me. No idea here...
-        console.warn("Clipboard.writeText() not implemented");
+        console.warn("Clipboard.writeText() not implemented: ", text);
     }
 }
 

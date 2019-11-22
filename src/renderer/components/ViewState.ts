@@ -9,7 +9,7 @@ export type ViewPath = string;
 export interface ViewState<T> {
     id: string;
     title: string;
-    iconName?: string;
+    icon?: string;
     /**
      * The view type is used to lookup the renderer for this kind of view, e.g. "world".
      */

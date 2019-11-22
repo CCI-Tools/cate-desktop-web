@@ -16,8 +16,10 @@
     "moduleResolution": "node",
     "isolatedModules": true,
     "resolveJsonModule": true,
+    "experimentalDecorators": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "downlevelIteration": true
   },
   "include": [
     "src"

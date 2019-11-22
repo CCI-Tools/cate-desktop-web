@@ -78,9 +78,9 @@ class SelectWorkspaceDialog extends React.Component<ISelectWorkspaceDialogProps 
     private onConfirm() {
         this.props.dispatch(actions.hideDialog(this.props.dialogId, this.state));
         if (this.props.isNewDialog) {
-            this.props.dispatch(actions.newWorkspace(this.state.workspaceDir + '/' + this.state.workspaceName));
+            this.props.dispatch(actions.newWorkspace(this.state.workspaceDir + '/' + this.state.workspaceName) as any);
         } else {
-            this.props.dispatch(actions.saveWorkspaceAs(this.state.workspaceDir + '/' + this.state.workspaceName));
+            this.props.dispatch(actions.saveWorkspaceAs(this.state.workspaceDir + '/' + this.state.workspaceName) as any);
         }
     }
 

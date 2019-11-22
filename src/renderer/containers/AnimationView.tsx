@@ -57,7 +57,7 @@ class AnimationView extends React.Component<IAnimationViewProps & DispatchProp<S
     componentWillMount(): void {
         if (!this.props.view.data.innerHTML && !this.state.loading) {
             this.setState({loading: true}, () => {
-                this.props.dispatch(actions.loadAnimationViewData(this.props.view.id, this.props.view.data.resourceId));
+                this.props.dispatch(actions.loadAnimationViewData(this.props.view.id, this.props.view.data.resourceId) as any);
             });
         }
     }

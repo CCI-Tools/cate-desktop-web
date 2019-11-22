@@ -181,16 +181,16 @@ export function setGlobeViewPosition(position: GeographicPosition): ThunkAction 
                 if (layer && resource) {
                     const indexers = getNonSpatialIndexers(resource, layer);
 
-                    function call() {
+                    const call = () => {
                         return selectors.datasetAPISelector(getState()).extractPixelValues(baseDir,
                                                                                            resource.name,
                                                                                            [position.longitude, position.latitude],
                                                                                            indexers);
-                    }
+                    };
 
-                    function action(positionData: { [varName: string]: number }) {
+                    const action = (positionData: { [varName: string]: number }) => {
                         dispatch(setGlobeViewPositionImpl(position, positionData));
-                    }
+                    };
 
                     callAPI({title: 'Load cell values', dispatch, call, action, disableNotifications: true});
                     return;

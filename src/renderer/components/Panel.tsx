@@ -3,7 +3,7 @@ import * as React from 'react'
 export interface IPanelProps {
     id: string;
     title: string;
-    iconName: string;
+    icon: string;
     body?: JSX.Element|null;
     position?: "top" | "bottom";
 }

@@ -126,27 +126,27 @@ class StatusBar extends React.Component<IStatusBarProps & IStatusBarDispatch & D
     }
 
     private renderBackendStatus() {
-        let iconName = null;
+        let icon = null;
         let tooltipText = null;
         if (this.props.webAPIStatus === 'connecting') {
-            iconName = "pt-icon-link";
+            icon = "pt-icon-link";
             tooltipText = "Connecting";
         } else if (this.props.webAPIStatus === 'open') {
-            iconName = "pt-icon-link";
+            icon = "pt-icon-link";
             tooltipText = "Connected";
         } else if (this.props.webAPIStatus === 'error') {
-            iconName = "pt-icon-offline";
+            icon = "pt-icon-offline";
             tooltipText = "Error";
         } else if (this.props.webAPIStatus === 'closed') {
-            iconName = "pt-icon-offline";
+            icon = "pt-icon-offline";
             tooltipText = "Closed";
         } else {
-            iconName = "pt-icon-help";
+            icon = "pt-icon-help";
             tooltipText = "Unknown";
         }
         return (
             <Tooltip content={tooltipText} hoverOpenDelay={1500} position={Position.LEFT_TOP}>
-                <span className={`pt-icon-small ${iconName}`}/>
+                <span className={`pt-icon-small ${icon}`}/>
             </Tooltip>
         );
     };

@@ -89,7 +89,7 @@ class JobFailureDialog extends React.Component<DispatchProp<State> & IJobFailure
         const title = getJobFailureTitle(this.props.jobFailure);
         return (
             <ModalDialog isOpen={this.props.isOpen}
-                         iconName={'error'}
+                         icon={'error'}
                          title={title}
                          onConfirm={this.handleConfirm}
                          onCancel={this.handleCancel}
@@ -144,7 +144,7 @@ class JobFailureDialog extends React.Component<DispatchProp<State> & IJobFailure
             );
         }
 
-        const iconName = getJobFailureIconName(this.props.jobFailure) as IconName;
+        const icon = getJobFailureIconName(this.props.jobFailure) as IconName;
         const intentName = getJobFailureIntentName(this.props.jobFailure);
         let iconIntent;
         if (isUserError(this.props.jobFailure)) {
@@ -156,7 +156,7 @@ class JobFailureDialog extends React.Component<DispatchProp<State> & IJobFailure
         return (
             <div style={{display: "flex"}}>
                 <div style={{fontSize: "4em", flex: "0 1 1em"}}>
-                    <Icon iconName={iconName} iconSize={'inherit'} intent={iconIntent}/>
+                    <Icon icon={icon} intent={iconIntent}/>
                 </div>
                 <div style={{flex: "1 1 90%", marginLeft: "1em"}}>
                     {messageDiv}

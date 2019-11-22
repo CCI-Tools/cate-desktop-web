@@ -125,7 +125,7 @@ class OperationsPanel extends React.Component<IOperationsPanelProps & DispatchPr
             const operationFilterExprInput = (
                 <InputGroup
                     disabled={false}
-                    leftIconName="filter"
+                    leftIcon="filter"
                     onChange={this.handleOperationFilterExprChange}
                     placeholder="Find operation"
                     rightElement={resultsTag}
@@ -141,7 +141,7 @@ class OperationsPanel extends React.Component<IOperationsPanelProps & DispatchPr
                                 onClick={this.handleAddOperationStepButtonClicked}
                                 disabled={!canAddStepOperation}
                                 text="Add Step..."
-                                iconName="play"/>
+                                icon="play"/>
                     {canAddStepOperation ? <OperationStepDialog id={NEW_OPERATION_STEP_DIALOG_ID}/> : null}
                 </div>
             );

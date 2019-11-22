@@ -6,7 +6,10 @@
  * @author Norman Fomferra
  */
 
-importScripts('../node_modules/oboe/dist/oboe-browser.js');
+// importScripts('../node_modules/oboe/dist/oboe-browser.js');
+
+import 'oboe-browser';
+
 const oboe = (self as any).oboe;
 
 onmessage = function (event: MessageEvent) {
