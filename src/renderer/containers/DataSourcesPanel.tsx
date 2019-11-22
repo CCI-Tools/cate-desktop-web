@@ -9,8 +9,8 @@ import {
     InputGroup,
     Classes,
     Tag,
-    Tabs2,
-    Tab2,
+    Tabs,
+    Tab,
     Checkbox,
     Colors, Collapse, Callout, Intent
 } from '@blueprintjs/core';
@@ -745,9 +745,9 @@ class DataSourceDetails extends React.PureComponent<IDataSourceDetailsProps, nul
         details.push(DataSourceDetails.renderMetaInfoLicences(dataSource.meta_info));
 
         return (
-            <Tabs2 id="dsDetails" renderActiveTabPanelOnly={true}>
-                {details.map(d => <Tab2 key={d.id} id={d.id} title={d.title} panel={d.element}/>)}
-            </Tabs2>
+            <Tabs id="dsDetails" renderActiveTabPanelOnly={true}>
+                {details.map(d => <Tab key={d.id} id={d.id} title={d.title} panel={d.element}/>)}
+            </Tabs>
         );
     }
 }

@@ -11,7 +11,7 @@ import {
     WorkflowStepState,
     WorkspaceState
 } from "../state";
-import { Menu, MenuItem, Popover, Position, Tab2, Tabs2, Tooltip } from "@blueprintjs/core";
+import { Menu, MenuItem, Popover, Position, Tab, Tabs, Tooltip } from "@blueprintjs/core";
 import { Cell, Column, Table, TruncatedFormat, TruncatedPopoverMode } from "@blueprintjs/table";
 import { ListBox } from "../components/ListBox";
 import { LabelWithType } from "../components/LabelWithType";
@@ -289,13 +289,13 @@ class WorkspacePanel extends React.PureComponent<IWorkspacePanelProps & Dispatch
                         {copyItemButton}
                     </div>
                 </div>
-                <Tabs2 id="workflow"
+                <Tabs id="workflow"
                        renderActiveTabPanelOnly={true}
                        selectedTabId={this.props.workspacePanelMode}
                        onChange={this.handleWorkspacePanelModeChanged}>
-                    <Tab2 id="steps" title={`Workflow (${steps.length})`} panel={this.renderWorkflowStepsPanel()}/>
-                    <Tab2 id="resources" title={`Resources (${resources.length})`} panel={this.renderResourcesPanel()}/>
-                </Tabs2>
+                    <Tab id="steps" title={`Workflow (${steps.length})`} panel={this.renderWorkflowStepsPanel()}/>
+                    <Tab id="resources" title={`Resources (${resources.length})`} panel={this.renderResourcesPanel()}/>
+                </Tabs>
             </ScrollablePanelContent>
         );
     }

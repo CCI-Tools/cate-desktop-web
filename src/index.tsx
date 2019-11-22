@@ -9,9 +9,10 @@ import './index.css';
     <link href="node_modules/@blueprintjs/table/dist/table.css" rel="stylesheet"/>
     <link href="node_modules/@blueprintjs/datetime/dist/blueprint-datetime.css" rel="stylesheet"/>
  */
-import '@blueprintjs/core/dist/blueprint.css';
-import '@blueprintjs/table/dist/table.css';
-import '@blueprintjs/datetime/dist/blueprint-datetime.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/table/lib/css/table.css';
+import '@blueprintjs/datetime/lib/css/blueprint-datetime.css';
+import '@blueprintjs/icons/lib/css/blueprint-icons.css';
 
 
 main();
