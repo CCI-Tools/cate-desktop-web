@@ -35,6 +35,8 @@ export interface ArrayAction<T extends ObjectWithId> {
     numSteps?: number;
 }
 
+export type ArrayActions<T extends ObjectWithId> = ArrayAction<T>[];
+
 /**
  * A diff for arrays whose elements are unique objects with an "id" property of any type.
  * An "id" property is considered equal to another if it shallow-equals the other i.e. element.id === other.id.
@@ -49,9 +51,9 @@ export interface ArrayAction<T extends ObjectWithId> {
  *        Signature: (element1, element2) => any
  * @returns {ArrayAction<T>[]} An array of actions to be performed to make oldArray equal to newArray.
  */
-export function arrayDiff<T extends ObjectWithId>(oldArray: T[], newArray: T[], computeChange?): ArrayAction<T>[] {
+export function arrayDiff<T extends ObjectWithId>(oldArray: T[], newArray: T[], computeChange?): ArrayActions<T> {
 
-    const actions = <ArrayAction<T>[]>[];
+    const actions = [] as ArrayActions<T>;
     const currentArray = oldArray.slice();
 
     // REMOVE first, so we have less actions afterwards

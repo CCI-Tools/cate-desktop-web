@@ -47,7 +47,6 @@ class FigureView extends React.Component<IFigureViewProps & DispatchProp<State>,
     }
 
     render() {
-        const plots = [];
         const view = this.props.view;
         const figureResource = this.getFigureResource();
         if (!figureResource) {

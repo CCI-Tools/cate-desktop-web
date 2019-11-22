@@ -312,7 +312,7 @@ function getOverlayHtml(layers: LayerState[],
     if (!showLayerTextOverlay) {
         return overlayHtml;
     }
-    let layerInfoCount = 0;
+    // let layerInfoCount = 0;
     for (let layerIndex = 0; layerIndex < layers.length; layerIndex++) {
         let layer = layers[layerIndex] as any as VariableImageLayerState;
         if (layer.type === 'VariableImage') {
@@ -339,7 +339,7 @@ function getOverlayHtml(layers: LayerState[],
                 overlayHtml.appendChild(textDivElement);
                 overlayHtml.style.top = '0';
                 overlayHtml.style.width = '100%';
-                layerInfoCount++;
+                // layerInfoCount++;
             }
         }
     }

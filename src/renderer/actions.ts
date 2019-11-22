@@ -31,7 +31,7 @@ import * as d3 from 'd3-fetch';
 import * as Cesium from 'cesium';
 import { isDefined, isNumber } from '../common/types';
 import { reloadEntityWithOriginalGeometry } from './containers/globe-view-layers';
-import { DirectGeometryObject, Feature } from 'geojson';
+import { DirectGeometryObject } from 'geojson';
 import { SimpleStyle } from '../common/geojson-simple-style';
 import { GeometryToolType } from './components/cesium/geometry-tool';
 import { getEntityByEntityId } from './components/cesium/cesium-util';

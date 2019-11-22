@@ -71,6 +71,7 @@ class AnimationView extends React.Component<IAnimationViewProps & DispatchProp<S
                 let script = element.innerHTML;
                 try {
                     // indirect eval call evaluates in global scope
+                    // eslint-disable-next-line
                     eval('eval')(script);
                 } catch (e) {
                     console.error(e);

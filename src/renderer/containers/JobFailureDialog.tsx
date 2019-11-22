@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { ModalDialog } from '../components/ModalDialog';
 import {
-    ERROR_CODE_CANCELLED,
-    ERROR_CODE_INVALID_PARAMS, ERROR_CODE_OS_ERROR, ERROR_CODE_OUT_OF_MEMORY,
-    getJobFailureIconName, getJobFailureIntentName, getJobFailureTitle, isDeveloperError, isUserError,
+    getJobFailureIconName, getJobFailureTitle, isDeveloperError, isUserError,
     JobFailure
 } from '../webapi';
-import { Button, Checkbox, Collapse, Icon, IconName, Intent, Label } from '@blueprintjs/core';
+import { Button, Checkbox, Collapse, Icon, IconName, Intent } from '@blueprintjs/core';
 import * as selectors from '../selectors';
 import { State } from '../state';
 import { connect, DispatchProp } from 'react-redux';
@@ -136,7 +134,7 @@ class JobFailureDialog extends React.Component<DispatchProp<State> & IJobFailure
             reporting = (
                 <div style={{marginTop: '1em'}}>
                     <span className="pt-text-muted">Please consider reporting this issue in Cate's <a
-                        href="https://github.com/CCI-Tools/cate/issues" target="_blank">issue tracker</a>.</span>
+                        href="https://github.com/CCI-Tools/cate/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>.</span>
                     <Checkbox label='Copy error report to clipboard'
                               checked={this.state.copyReport}
                               onChange={this.handleCopyReport}/>
@@ -145,7 +143,6 @@ class JobFailureDialog extends React.Component<DispatchProp<State> & IJobFailure
         }
 
         const icon = getJobFailureIconName(this.props.jobFailure) as IconName;
-        const intentName = getJobFailureIntentName(this.props.jobFailure);
         let iconIntent;
         if (isUserError(this.props.jobFailure)) {
             iconIntent = Intent.PRIMARY;

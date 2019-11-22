@@ -478,6 +478,7 @@ class DataSourcesList extends React.PureComponent<IDataSourcesListProps, null> {
         const icon = ((dataSource.meta_info && dataSource.meta_info.cci_project) || 'cci').toLowerCase();
         return <img src={`resources/images/data-sources/esacci/${icon}.png`}
                     style={DataSourcesList.ICON_DIV_STYLE}
+                    alt="cci icon"
                     onError={this.handleIconLoadError}/>
     }
 

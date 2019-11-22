@@ -1,4 +1,3 @@
-import * as React from 'react';
 import {DateRange} from "@blueprintjs/datetime";
 import {Field, FieldType, FieldValue, IFieldProps} from "./Field";
 import {isUndefinedOrNull} from "../../../common/types";
