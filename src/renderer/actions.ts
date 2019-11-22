@@ -1457,7 +1457,7 @@ export function notifySelectedEntityChange(viewId: string, layer: LayerState | n
             && isNumber(selectedEntity._simp)
             && isNumber(selectedEntity._resId)
             && isNumber(selectedEntity._idx)) {
-            const isGeometrySimplified = (selectedEntity._simp & 0x01) != 0;
+            const isGeometrySimplified = (selectedEntity._simp & 0x01) !== 0;
             if (isGeometrySimplified) {
                 const workspace = selectors.workspaceSelector(getState());
                 if (workspace) {
@@ -1559,7 +1559,7 @@ export function loadAnimationViewData(viewId: string, resId: number): ThunkActio
 
         const xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = () => {
-            if (xmlHttp.readyState == 4) {
+            if (xmlHttp.readyState === 4) {
                 dispatch(setAnimationResult(viewId, xmlHttp.responseText, xmlHttp.status));
             }
         };

@@ -107,9 +107,9 @@ export const activeRequestLocksSelector = (state: State): Set<string> => {
     const activeRequestLocks = new Set<string>();
     for (let jobId in state.communication.tasks) {
         const task = state.communication.tasks[jobId];
-        if (task.status == JobStatusEnum.NEW ||
-            task.status == JobStatusEnum.SUBMITTED ||
-            task.status == JobStatusEnum.IN_PROGRESS) {
+        if (task.status === JobStatusEnum.NEW ||
+            task.status === JobStatusEnum.SUBMITTED ||
+            task.status === JobStatusEnum.IN_PROGRESS) {
             activeRequestLocks.add(task.requestLock);
         }
     }

@@ -145,7 +145,7 @@ export function getLayerDisplayName(layer: LayerState): string {
 export function getLayerTypeIconName(layer: LayerState): string {
     if (isVectorLayer(layer)) {
         return "pt-icon-map-marker";
-    } else if (layer.type == "Image" || layer.type === "VariableImage") {
+    } else if (layer.type === "Image" || layer.type === "VariableImage") {
         return "pt-icon-layout-grid"; // "pt-icon-helper-management" also good
     }
     return "pt-icon-layer";
@@ -573,7 +573,7 @@ function newVarIndex(variable: VariableState, varIndex) {
     const numSpatialDims = 2;
     if (variable.numDims
         && variable.numDims >= numSpatialDims
-        && (!varIndex || varIndex.length != variable.numDims - numSpatialDims)) {
+        && (!varIndex || varIndex.length !== variable.numDims - numSpatialDims)) {
         return Array(variable.numDims - numSpatialDims).fill(0);
     }
     return varIndex;

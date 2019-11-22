@@ -263,7 +263,7 @@ class OperationsPanel extends React.Component<IOperationsPanelProps & DispatchPr
     }
 
     private static getMultiplicityText(n: number, singularText: string, pluralText?: string): string {
-        return n == 1 ? singularText : (pluralText || singularText + 's');
+        return n === 1 ? singularText : (pluralText || singularText + 's');
     }
 
     private renderOperationDetailsCard() {

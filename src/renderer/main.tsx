@@ -128,7 +128,7 @@ function readDroppedFile(file: File, dispatch: Dispatch<State>) {
         opName = 'read_json';
     } else if (file.name.endsWith('.csv')) {
         opName = 'read_csv';
-    } else if (file.name.endsWith('.geojson') || file.path.endsWith('.shp') || file.path.endsWith('.gml')) {
+    } else if (file.name.endsWith('.geojson') || file.name.endsWith('.shp') || file.name.endsWith('.gml')) {
         opName = 'read_geo_data_frame';
     }
     if (!opArgs) {

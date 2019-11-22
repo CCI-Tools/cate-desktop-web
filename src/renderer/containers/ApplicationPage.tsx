@@ -61,7 +61,7 @@ interface IDispatch {
 }
 
 //noinspection JSUnusedLocalSymbols
-export default class ApplicationPage extends React.PureComponent<null, null> {
+export default class ApplicationPage extends React.PureComponent<{}> {
     static readonly ROOT_DIV_STYLE: CSSProperties = {
         display: "flex",
         flexFlow: "column nowrap",

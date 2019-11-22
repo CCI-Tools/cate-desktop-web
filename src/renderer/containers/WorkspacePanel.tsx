@@ -239,7 +239,7 @@ class WorkspacePanel extends React.PureComponent<IWorkspacePanelProps & Dispatch
 
         const workspaceName = (workspace.isScratch || !workspace.baseDir)
             ? '<unnamed>'
-            : workspace.baseDir.split(/[\\\/]/).pop();
+            : workspace.baseDir.split(/[\\/]/).pop();
         const workspaceLabel = (
             <Tooltip content={workspace.baseDir} position={Position.RIGHT}>
                 <strong>{workspaceName}</strong>

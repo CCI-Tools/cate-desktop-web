@@ -51,10 +51,6 @@ class StatusBar extends React.Component<IStatusBarProps & IStatusBarDispatch & D
         overflow: "hidden",
     };
 
-    constructor(props: IStatusBarProps & IStatusBarDispatch & DispatchProp<State>) {
-        super(props);
-    }
-
     private renderTasks() {
         const tasks: { [jobId: number]: TaskState } = this.props.tasks;
 

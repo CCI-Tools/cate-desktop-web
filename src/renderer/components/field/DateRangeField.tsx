@@ -21,10 +21,6 @@ export class DateRangeField extends Field<IDateRangeFieldProps> {
         size: 24
     };
 
-    constructor(props: IDateRangeFieldProps) {
-        super(props);
-    }
-
     parseValue(textValue: string): DateRangeFieldType {
         return parseDateRange(textValue, this.props.nullable);
     }

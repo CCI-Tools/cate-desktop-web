@@ -51,10 +51,6 @@ class TableView extends React.PureComponent<ITableViewProps & ITableViewOwnProps
         justifyContent: 'center' as any
     };
 
-    constructor(props: ITableViewProps & ITableViewOwnProps & DispatchProp<State>) {
-        super(props);
-    }
-
     componentWillMount(): void {
         const viewData = this.props.viewData;
         if (!viewData.dataRows && !viewData.isLoading && !viewData.error) {

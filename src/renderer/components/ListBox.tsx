@@ -26,9 +26,6 @@ export interface IListBoxProps {
  * @author Norman Fomferra
  */
 export class ListBox extends React.PureComponent<IListBoxProps, any> {
-    constructor(props: IListBoxProps) {
-        super(props);
-    }
 
     handleClick(event: MouseEvent, itemIndex, key: string|number) {
         // console.log('handleClick', event.button, event.buttons,event.bubbles, event.detail);
