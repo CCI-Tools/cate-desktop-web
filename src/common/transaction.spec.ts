@@ -1,4 +1,4 @@
-import { expect, assert } from 'chai';
+import { expect } from 'chai';
 import 'chai-as-promised';
 import deepEqual from 'deep-equal';
 import { isDefined } from './types';

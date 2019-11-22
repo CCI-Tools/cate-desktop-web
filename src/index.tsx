@@ -2,13 +2,6 @@
 import { main } from './renderer/main';
 
 import './index.css';
-
-
-/*
-    <link href="node_modules/@blueprintjs/core/dist/blueprint.css" rel="stylesheet"/>
-    <link href="node_modules/@blueprintjs/table/dist/table.css" rel="stylesheet"/>
-    <link href="node_modules/@blueprintjs/datetime/dist/blueprint-datetime.css" rel="stylesheet"/>
- */
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/table/lib/css/table.css';
 import '@blueprintjs/datetime/lib/css/blueprint-datetime.css';
